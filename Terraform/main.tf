@@ -1,19 +1,29 @@
 terraform {
-  backend "azurerm" {
-    resource_group_name  = "TerraformDemo"
-    storage_account_name = "terraformcodeops1"
-    container_name       = "tfstatefile"
-    key                  = "dev.terraform.tfstate"
+  required_version = ">=0.12"
+
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~>2.0"
+    }
   }
 }
-module "RG" {
-  source   = "./modules/RG" #A
-  rgname   = var.rgname     #B
-  location = var.location
+
+provider "azurerm" {
+  features {}
 }
-module "SA" {
-  source   = "./modules/StorageAccount"
-  sname    = var.sname
-  rgname   = var.rgname
-  location = var.location
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "ketantfstaterg"
+    storage_account_name = "ketantfstatesa99"
+    container_name       = "ketantfstatect"
+    key                  = "simple.terraform.tfstate"
+  }
+}
+
+
+resource "azurerm_resource_group" "example" {
+  name     = "examplerg"
+  location = "centralus"
 }
