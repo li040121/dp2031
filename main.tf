@@ -20,6 +20,7 @@ module "RG" {
 }
 module "SA" {
   source   = "./modules/SA"
+  sname    = var.sname
   rgname   = var.rgname
   location = var.location
 }
