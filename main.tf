@@ -12,3 +12,9 @@ resource "azurerm_resource_group" "example" {
   name     = "examplerg"
   location = "centralus"
 }
+
+module "RG" {
+  source   = "modules/RG" #A
+  rgname   = var.rgname     #B
+  location = var.location
+}
