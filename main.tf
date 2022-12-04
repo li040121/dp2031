@@ -14,7 +14,7 @@ resource "azurerm_resource_group" "example" {
 }
 
 module "RG" {
-  source   = "modules/RG"
+  source   = "./modules/RG"
   rgname   = var.rgname
   location = var.location
 }
