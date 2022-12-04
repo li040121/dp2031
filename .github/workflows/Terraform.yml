@@ -1,6 +1,6 @@
 name: 'Terraform'
 
-off:
+on:
   push:
     branches:
     - main
