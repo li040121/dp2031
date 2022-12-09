@@ -3,7 +3,7 @@ terraform {
     resource_group_name  = "data-engineering-synapse-wl09x63"
     storage_account_name = "asastorewl09x63"
     container_name       = "staging"
-    key                  = "simple.terraform.tfstate"
+    key                  = "example.terraform.tfstate"
   }
 }
 
