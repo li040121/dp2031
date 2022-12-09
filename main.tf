@@ -1,8 +1,8 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "ketantfstaterg"
-    storage_account_name = "ketantfstatesa99"
-    container_name       = "ketantfstatect"
+    resource_group_name  = "data-engineering-synapse-wl09x63"
+    storage_account_name = "asastorewl09x63"
+    container_name       = "staging"
     key                  = "simple.terraform.tfstate"
   }
 }
